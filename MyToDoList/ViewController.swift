@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // 保存しているToDoの読み込み処理
         let userDefaults = UserDefaults.standard
-        if let storedTodoList = userDefaults.array(forKey: "todoList") as? Data {
+        if let storedTodoList = userDefaults.object(forKey: "todoList") as? Data {
             do {
                 if let unarchiveTodoList =  try NSKeyedUnarchiver.unarchivedObject(
                     ofClasses: [NSArray.self, MyTodo.self],
